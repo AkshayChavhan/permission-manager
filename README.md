@@ -25,6 +25,7 @@ mongodb+srv://<username>:<password>@cluster0.mongodb.net/myFirstDatabase?retryWr
 Create a .env.local file in the root of your project and add your MongoDB URI:
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
+4. Create a file lib/auth.js for NextAuth.js configuration:
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
