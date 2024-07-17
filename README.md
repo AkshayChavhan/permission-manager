@@ -10,8 +10,20 @@ Step 2: Install necessary dependencies:
 
 npm install next-auth @next-auth/mongodb-adapter mongodb
 
+Step 3: Setting Up MongoDB
+
+1. Create a MongoDB database and get the connection string.
+
+For MongoDB Atlas, the connection string usually looks like this:
+
+mongodb+srv://<username>:<password>@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+2. Create a file lib/mongodb.js for connecting to MongoDB:
 
 
+3.  Adding Environment Variables
+Create a .env.local file in the root of your project and add your MongoDB URI:
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 
 
