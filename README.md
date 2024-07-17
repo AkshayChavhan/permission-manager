@@ -6,6 +6,12 @@ Step 1: Setting Up the Next.js Project
 npx create-next-app@latest next-auth-app
 cd next-auth-app
 
+Step 2: Install necessary dependencies:
+
+npm install next-auth @next-auth/mongodb-adapter mongodb
+
+
+
 
 
 
