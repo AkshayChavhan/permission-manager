@@ -1,25 +1,25 @@
-// lib/auth.js
+// src/lib/auth.js
 import NextAuth from "next-auth";
-import Providers from "next-auth/providers";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "./mongodb";
 
-export default NextAuth({
+export const authOptions = {
   providers: [
-    Providers.Credentials({
-      // The name to display on the sign-in form (e.g. 'Sign in with...')
+    CredentialsProvider({
       name: "Credentials",
       credentials: {
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        const user = { id: 1, name: "Admin", email: "admin@example.com" };
-        if (
-          credentials.username === "admin" &&
-          credentials.password === "password"
-        ) {
-          return user;
+        const client = await clientPromise;
+        const db = client.db();
+
+        const user = await db.collection("users").findOne({ username: credentials.username });
+
+        if (user && user.password === credentials.password) {
+          return { id: user._id, name: user.username, email: user.email };
         } else {
           return null;
         }
@@ -42,4 +42,6 @@ export default NextAuth({
       return session;
     },
   },
-});
+};
+
+export default authOptions;

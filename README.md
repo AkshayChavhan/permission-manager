@@ -31,7 +31,12 @@ MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/myFirstData
 
 Create the API route for authentication:
 
-Step 6: Creating Login and Logout Pages
+6. Creating Login and Logout Pages / Creating secret next-auth key
+using bash
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+
+<!-- NEXTAUTH_SECRET=EvGAeOhlnhCi1lIvNjkaOV98iJuDI6Ot7DY/nYh1i8M= -->
+
 
 
 
