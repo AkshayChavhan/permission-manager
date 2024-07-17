@@ -27,6 +27,11 @@ MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/myFirstData
 
 4. Create a file lib/auth.js for NextAuth.js configuration:
 
+5. Adding API Routes
+
+Create the API route for authentication:
+
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
